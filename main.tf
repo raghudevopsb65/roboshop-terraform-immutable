@@ -94,7 +94,9 @@ module "FRONTEND" {
   COMPONENT            = "frontend"
   INSTANCE_TYPE        = var.INSTANCE_COUNT["FRONTEND"]["INSTANCE_TYPE"]
   WORKSTATION_IP       = var.WORKSTATION_IP
-  INSTANCE_COUNT       = var.INSTANCE_COUNT["FRONTEND"]["COUNT"]
+  ASG_DESIRED          = var.INSTANCE_COUNT["FRONTEND"]["DESIRED"]
+  ASG_MAX              = var.INSTANCE_COUNT["FRONTEND"]["MAX"]
+  ASG_MIN              = var.INSTANCE_COUNT["FRONTEND"]["MIN"]
   LB_ARN               = module.LB.PUBLIC_LB_ARN
   LB_TYPE              = "public"
   PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
