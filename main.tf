@@ -106,109 +106,124 @@ module "FRONTEND" {
   APP_VERSION          = "2.0.1"
 }
 
-//module "CART" {
-//  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
-//  ENV                  = var.ENV
-//  PROJECT              = var.PROJECT
-//  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
-//  VPC_ID               = module.VPC.VPC_ID
-//  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
-//  PORT                 = 8080
-//  COMPONENT            = "cart"
-//  INSTANCE_TYPE        = var.INSTANCE_COUNT["CART"]["INSTANCE_TYPE"]
-//  WORKSTATION_IP       = var.WORKSTATION_IP
-//  INSTANCE_COUNT       = var.INSTANCE_COUNT["CART"]["COUNT"]
-//  LB_ARN               = module.LB.PRIVATE_LB_ARN
-//  LB_TYPE              = "private"
-//  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
-//  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
-//  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
-//  REDIS_ENDPOINT       = module.ELASTICACHE.REDIS_ENDPOINT
-//  PROMETHEUS_IP        = var.PROMETHEUS_IP
-//}
-//
-//module "CATALOGUE" {
-//  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
-//  ENV                  = var.ENV
-//  PROJECT              = var.PROJECT
-//  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
-//  VPC_ID               = module.VPC.VPC_ID
-//  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
-//  PORT                 = 8080
-//  COMPONENT            = "catalogue"
-//  INSTANCE_TYPE        = var.INSTANCE_COUNT["CATALOGUE"]["INSTANCE_TYPE"]
-//  WORKSTATION_IP       = var.WORKSTATION_IP
-//  INSTANCE_COUNT       = var.INSTANCE_COUNT["CATALOGUE"]["COUNT"]
-//  LB_ARN               = module.LB.PRIVATE_LB_ARN
-//  LB_TYPE              = "private"
-//  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
-//  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
-//  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
-//  DOCDB_ENDPOINT       = module.DOCDB.DOCDB_ENDPOINT
-//  PROMETHEUS_IP        = var.PROMETHEUS_IP
-//}
-//
-//module "USER" {
-//  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
-//  ENV                  = var.ENV
-//  PROJECT              = var.PROJECT
-//  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
-//  VPC_ID               = module.VPC.VPC_ID
-//  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
-//  PORT                 = 8080
-//  COMPONENT            = "user"
-//  INSTANCE_TYPE        = var.INSTANCE_COUNT["USER"]["INSTANCE_TYPE"]
-//  WORKSTATION_IP       = var.WORKSTATION_IP
-//  INSTANCE_COUNT       = var.INSTANCE_COUNT["USER"]["COUNT"]
-//  LB_ARN               = module.LB.PRIVATE_LB_ARN
-//  LB_TYPE              = "private"
-//  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
-//  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
-//  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
-//  DOCDB_ENDPOINT       = module.DOCDB.DOCDB_ENDPOINT
-//  REDIS_ENDPOINT       = module.ELASTICACHE.REDIS_ENDPOINT
-//  PROMETHEUS_IP        = var.PROMETHEUS_IP
-//}
-//
-//module "SHIPPING" {
-//  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
-//  ENV                  = var.ENV
-//  PROJECT              = var.PROJECT
-//  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
-//  VPC_ID               = module.VPC.VPC_ID
-//  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
-//  PORT                 = 8080
-//  COMPONENT            = "shipping"
-//  INSTANCE_TYPE        = var.INSTANCE_COUNT["SHIPPING"]["INSTANCE_TYPE"]
-//  WORKSTATION_IP       = var.WORKSTATION_IP
-//  INSTANCE_COUNT       = var.INSTANCE_COUNT["SHIPPING"]["COUNT"]
-//  LB_ARN               = module.LB.PRIVATE_LB_ARN
-//  LB_TYPE              = "private"
-//  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
-//  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
-//  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
-//  MYSQL_ENDPOINT       = module.RDS.MYSQL_ENDPOINT
-//  PROMETHEUS_IP        = var.PROMETHEUS_IP
-//}
-//
-//module "PAYMENT" {
-//  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
-//  ENV                  = var.ENV
-//  PROJECT              = var.PROJECT
-//  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
-//  VPC_ID               = module.VPC.VPC_ID
-//  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
-//  PORT                 = 8080
-//  COMPONENT            = "payment"
-//  INSTANCE_TYPE        = var.INSTANCE_COUNT["PAYMENT"]["INSTANCE_TYPE"]
-//  WORKSTATION_IP       = var.WORKSTATION_IP
-//  INSTANCE_COUNT       = var.INSTANCE_COUNT["PAYMENT"]["COUNT"]
-//  LB_ARN               = module.LB.PRIVATE_LB_ARN
-//  LB_TYPE              = "private"
-//  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
-//  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
-//  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
-//  PROMETHEUS_IP        = var.PROMETHEUS_IP
-//}
+module "CART" {
+  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
+  ENV                  = var.ENV
+  PROJECT              = var.PROJECT
+  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
+  VPC_ID               = module.VPC.VPC_ID
+  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
+  PORT                 = 8080
+  COMPONENT            = "cart"
+  INSTANCE_TYPE        = var.INSTANCE_COUNT["CART"]["INSTANCE_TYPE"]
+  WORKSTATION_IP       = var.WORKSTATION_IP
+  ASG_DESIRED          = var.INSTANCE_COUNT["CART"]["DESIRED"]
+  ASG_MAX              = var.INSTANCE_COUNT["CART"]["MAX"]
+  ASG_MIN              = var.INSTANCE_COUNT["CART"]["MIN"]
+  LB_ARN               = module.LB.PRIVATE_LB_ARN
+  LB_TYPE              = "private"
+  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
+  REDIS_ENDPOINT       = module.ELASTICACHE.REDIS_ENDPOINT
+  PROMETHEUS_IP        = var.PROMETHEUS_IP
+  APP_VERSION          = "2.0.0"
+}
+
+module "CATALOGUE" {
+  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
+  ENV                  = var.ENV
+  PROJECT              = var.PROJECT
+  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
+  VPC_ID               = module.VPC.VPC_ID
+  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
+  PORT                 = 8080
+  COMPONENT            = "catalogue"
+  INSTANCE_TYPE        = var.INSTANCE_COUNT["CATALOGUE"]["INSTANCE_TYPE"]
+  WORKSTATION_IP       = var.WORKSTATION_IP
+  ASG_DESIRED          = var.INSTANCE_COUNT["CATALOGUE"]["DESIRED"]
+  ASG_MAX              = var.INSTANCE_COUNT["CATALOGUE"]["MAX"]
+  ASG_MIN              = var.INSTANCE_COUNT["CATALOGUE"]["MIN"]
+  LB_ARN               = module.LB.PRIVATE_LB_ARN
+  LB_TYPE              = "private"
+  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
+  DOCDB_ENDPOINT       = module.DOCDB.DOCDB_ENDPOINT
+  PROMETHEUS_IP        = var.PROMETHEUS_IP
+  APP_VERSION          = "2.0.1"
+}
+
+module "USER" {
+  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
+  ENV                  = var.ENV
+  PROJECT              = var.PROJECT
+  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
+  VPC_ID               = module.VPC.VPC_ID
+  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
+  PORT                 = 8080
+  COMPONENT            = "user"
+  INSTANCE_TYPE        = var.INSTANCE_COUNT["USER"]["INSTANCE_TYPE"]
+  WORKSTATION_IP       = var.WORKSTATION_IP
+  ASG_DESIRED          = var.INSTANCE_COUNT["USER"]["DESIRED"]
+  ASG_MAX              = var.INSTANCE_COUNT["USER"]["MAX"]
+  ASG_MIN              = var.INSTANCE_COUNT["USER"]["MIN"]
+  LB_ARN               = module.LB.PRIVATE_LB_ARN
+  LB_TYPE              = "private"
+  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
+  DOCDB_ENDPOINT       = module.DOCDB.DOCDB_ENDPOINT
+  REDIS_ENDPOINT       = module.ELASTICACHE.REDIS_ENDPOINT
+  PROMETHEUS_IP        = var.PROMETHEUS_IP
+  APP_VERSION          = "2.0.0"
+}
+
+module "SHIPPING" {
+  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
+  ENV                  = var.ENV
+  PROJECT              = var.PROJECT
+  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
+  VPC_ID               = module.VPC.VPC_ID
+  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
+  PORT                 = 8080
+  COMPONENT            = "shipping"
+  INSTANCE_TYPE        = var.INSTANCE_COUNT["SHIPPING"]["INSTANCE_TYPE"]
+  WORKSTATION_IP       = var.WORKSTATION_IP
+  ASG_DESIRED          = var.INSTANCE_COUNT["SHIPPING"]["DESIRED"]
+  ASG_MAX              = var.INSTANCE_COUNT["SHIPPING"]["MAX"]
+  ASG_MIN              = var.INSTANCE_COUNT["SHIPPING"]["MIN"]
+  LB_ARN               = module.LB.PRIVATE_LB_ARN
+  LB_TYPE              = "private"
+  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
+  MYSQL_ENDPOINT       = module.RDS.MYSQL_ENDPOINT
+  PROMETHEUS_IP        = var.PROMETHEUS_IP
+  APP_VERSION          = "2.0.0"
+}
+
+module "PAYMENT" {
+  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
+  ENV                  = var.ENV
+  PROJECT              = var.PROJECT
+  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
+  VPC_ID               = module.VPC.VPC_ID
+  ALLOW_SG_CIDR        = module.VPC.PRIVATE_SUBNET_CIDR
+  PORT                 = 8080
+  COMPONENT            = "payment"
+  INSTANCE_TYPE        = var.INSTANCE_COUNT["PAYMENT"]["INSTANCE_TYPE"]
+  WORKSTATION_IP       = var.WORKSTATION_IP
+  ASG_DESIRED          = var.INSTANCE_COUNT["PAYMENT"]["DESIRED"]
+  ASG_MAX              = var.INSTANCE_COUNT["PAYMENT"]["MAX"]
+  ASG_MIN              = var.INSTANCE_COUNT["PAYMENT"]["MIN"]
+  LB_ARN               = module.LB.PRIVATE_LB_ARN
+  LB_TYPE              = "private"
+  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
+  PROMETHEUS_IP        = var.PROMETHEUS_IP
+  APP_VERSION          = "2.0.0"
+}
 
 
