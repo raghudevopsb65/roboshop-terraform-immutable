@@ -82,27 +82,28 @@ module "LB" {
   PUBLIC_ZONE_ID     = var.PUBLIC_ZONE_ID
 }
 
-//module "FRONTEND" {
-//  //depends_on           = [module.CART, module.CATALOGUE, module.PAYMENT, module.SHIPPING, module.USER]
-//  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
-//  ENV                  = var.ENV
-//  PROJECT              = var.PROJECT
-//  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
-//  VPC_ID               = module.VPC.VPC_ID
-//  ALLOW_SG_CIDR        = concat(module.VPC.PRIVATE_SUBNET_CIDR, module.VPC.PUBLIC_SUBNET_CIDR)
-//  PORT                 = 80
-//  COMPONENT            = "frontend"
-//  INSTANCE_TYPE        = var.INSTANCE_COUNT["FRONTEND"]["INSTANCE_TYPE"]
-//  WORKSTATION_IP       = var.WORKSTATION_IP
-//  INSTANCE_COUNT       = var.INSTANCE_COUNT["FRONTEND"]["COUNT"]
-//  LB_ARN               = module.LB.PUBLIC_LB_ARN
-//  LB_TYPE              = "public"
-//  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
-//  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
-//  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
-//  PROMETHEUS_IP        = var.PROMETHEUS_IP
-//}
-//
+module "FRONTEND" {
+  //depends_on           = [module.CART, module.CATALOGUE, module.PAYMENT, module.SHIPPING, module.USER]
+  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
+  ENV                  = var.ENV
+  PROJECT              = var.PROJECT
+  PRIVATE_SUBNET_IDS   = module.VPC.PRIVATE_SUBNET_IDS
+  VPC_ID               = module.VPC.VPC_ID
+  ALLOW_SG_CIDR        = concat(module.VPC.PRIVATE_SUBNET_CIDR, module.VPC.PUBLIC_SUBNET_CIDR)
+  PORT                 = 80
+  COMPONENT            = "frontend"
+  INSTANCE_TYPE        = var.INSTANCE_COUNT["FRONTEND"]["INSTANCE_TYPE"]
+  WORKSTATION_IP       = var.WORKSTATION_IP
+  INSTANCE_COUNT       = var.INSTANCE_COUNT["FRONTEND"]["COUNT"]
+  LB_ARN               = module.LB.PUBLIC_LB_ARN
+  LB_TYPE              = "public"
+  PRIVATE_LB_DNS       = module.LB.PRIVATE_LB_DNS
+  PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
+  PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
+  PROMETHEUS_IP        = var.PROMETHEUS_IP
+  APP_VERSION          = 2.0.1
+}
+
 //module "CART" {
 //  source               = "github.com/raghudevopsb65/tf-module-immutable-app"
 //  ENV                  = var.ENV
