@@ -101,7 +101,7 @@ module "FRONTEND" {
   PRIVATE_ZONE_ID      = var.PRIVATE_ZONE_ID
   PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
   PROMETHEUS_IP        = var.PROMETHEUS_IP
-  APP_VERSION          = 2.0.1
+  APP_VERSION          = "2.0.1"
 }
 
 //module "CART" {
