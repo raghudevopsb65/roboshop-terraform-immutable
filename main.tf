@@ -151,7 +151,7 @@ module "CATALOGUE" {
   PRIVATE_LISTENER_ARN = module.LB.PRIVATE_LISTENER_ARN
   DOCDB_ENDPOINT       = module.DOCDB.DOCDB_ENDPOINT
   PROMETHEUS_IP        = var.PROMETHEUS_IP
-  APP_VERSION          = "2.0.2"
+  APP_VERSION          = "2.0.1"
 }
 
 module "USER" {
@@ -176,7 +176,7 @@ module "USER" {
   DOCDB_ENDPOINT       = module.DOCDB.DOCDB_ENDPOINT
   REDIS_ENDPOINT       = module.ELASTICACHE.REDIS_ENDPOINT
   PROMETHEUS_IP        = var.PROMETHEUS_IP
-  APP_VERSION          = "2.0.2"
+  APP_VERSION          = "2.0.0"
 }
 
 module "SHIPPING" {
