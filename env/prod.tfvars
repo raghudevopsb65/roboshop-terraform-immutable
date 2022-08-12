@@ -68,9 +68,9 @@ INSTANCE_COUNT = {
     INSTANCE_TYPE = "t3.micro"
   }
   SHIPPING = {
-    DESIRED       = 2
+    DESIRED       = 3
     MAX           = 5
-    MIN           = 2
+    MIN           = 3
     INSTANCE_TYPE = "t3.medium"
   }
   PAYMENT = {
